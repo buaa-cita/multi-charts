@@ -1,0 +1,15 @@
+node_name: chainnode-sample-node-1
+node_namespace: default
+chain_name: chainconfig-sample
+chain_namespace: default
+log_level: info
+network_key: ""
+node_address: ""
+node_key: ""
+kms_pwd: "123456"
+update_policy: AutoUpdate
+executor_node_port: 0
+network_node_port: 0
+# self_host: "chainnode-sample-node-1"
+# self_port: "40000"
+cluster: cita1

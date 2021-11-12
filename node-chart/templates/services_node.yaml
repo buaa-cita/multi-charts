@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.node_name }} #与network-config.toml对应
+spec:
+  type: NodePort
+  ports:
+  - port: 40000
+    targetPort: 40000
+    nodePort: {{ .Values.network_node_port }}
+    name: network
+  - port: 22000
+    targetPort: 22000
+    name: syncthing
+  - port: 8384
+    targetPort: 8384
+    name: gui
+  selector:
+    node_name: {{ .Values.node_name }} #与节点名字对应，下同
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.node_name }}-executor-service
+spec:
+  type: NodePort
+  ports:
+  - port: 50002
+    targetPort: 50002
+    nodePort: {{ .Values.executor_node_port }}
+    name: call
+  selector:
+    node_name: {{ .Values.node_name }}

@@ -1,0 +1,16 @@
+node_name: chainnode-sample-node-3
+node_namespace: default
+chain_name: chainconfig-sample
+chain_namespace: cita-ns
+log_level: info
+network_key: MHhiNjY3NThkNTU2MWY5MDg3ZDhkZDQ1ZGJlNGE4NzU5N2M2ZWRmMWVjMzA0ZmVhNmI4NjkyYTdkMWVlYmU1MGMx
+node_address: "0x1a8abfff4d402b2260f5dfd27dd7cae36dae8040"
+node_key: "0x7a551e5a5d323dc962f1267cfe11f0889f681deceb8aa125034336a71b8ece2a"
+kms_pwd: "123456"
+update_policy: AutoUpdate
+executor_node_port: 30019
+network_node_port: 30103
+
+# self_host: "chainnode-sample-node-0"
+# self_port: "40000"
+cluster: cita2

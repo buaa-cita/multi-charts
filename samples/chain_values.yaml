@@ -1,0 +1,31 @@
+# Default values for chain-chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+chain_name: chainconfig-sample
+chain_namespace: cita-ns
+authorities:
+  - 0x2587d77a67d39ced4dee34bf5ad7e6cddff4d206
+  - 0xab0ea7ecc9aa0d2b95777009bd2b0cc3b745f0f8
+super_admin: 0x73f003e2ef1988e52831153873785444b2afbf31
+timestamp: "1626417162942"
+pvc_path: /root/cita-cloud-datadir
+# pvc_path: /home/ffff/cita-cloud-datadir
+hostname: cita1
+# hostname: fffflu2004
+network_image: citacloud/network_direct:v6.0.0
+consensus_image: citacloud/consensus_bft:v6.0.0
+executor_image: citacloud/executor_evm:v6.1.0
+storage_image: citacloud/storage_rocksdb:v6.1.0
+controller_image: citacloud/controller:v6.2.0
+kms_image: citacloud/kms_sm:v6.0.0
+nodes:
+- cluster: cita1
+  name: chainnode-sample-node-0
+  host: 39.107.71.66
+  port: "30100"
+- cluster: cita2
+  name: chainnode-sample-node-1
+  host: 60.205.208.4
+  port: "30101"
+

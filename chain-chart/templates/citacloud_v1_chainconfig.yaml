@@ -1,0 +1,37 @@
+apiVersion: types.kubefed.io/v1beta1
+kind: FederatedChainConfig
+metadata:
+  name: {{ .Values.chain_name }}
+  namespace: {{ .Values.chain_namespace }}
+spec:
+  # Add fields here
+  template:
+    spec:
+    # Add fields here
+      authorities:
+      {{- range .Values.authorities }}
+      - {{ . | quote }}
+      {{- end }}
+      super_admin: {{ .Values.super_admin }}
+      block_interval: "3"
+      timestamp: {{ .Values.timestamp | quote }}
+      prevhash: "0x0000000000000000000000000000000000000000000000000000000000000000"
+      enable_tls: "true"
+      network_image: {{ .Values.network_image }}
+      consensus_image: {{ .Values.consensus_image }}
+      executor_image: {{ .Values.executor_image }}
+      storage_image: {{ .Values.storage_image }}
+      controller_image: {{ .Values.controller_image }}
+      kms_image: {{ .Values.kms_image }}
+      nodes:
+      {{- range .Values.nodes }}
+      - host: {{ .host | quote }}
+        port: {{ .port | quote }}
+        cluster: {{ .cluster | quote }}
+        name: {{ .name | quote }}
+      {{- end }}
+  placement:
+    clusters:
+    - name: cita1
+    - name: cita2
+
